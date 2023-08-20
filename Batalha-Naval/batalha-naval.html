@@ -4,24 +4,7 @@
     <link rel="stylesheet" type="text/css" href="batalha-naval.css">
     <script src="./javascripto.js"></script>
 </head>
-<script>
-    
-const tabuleiro = document.getElementsByClassName('celula');
 
-function gerarNumeroAleatorio(max) {
-    return Math.floor(Math.random() * max);
-}
-
-function tiroAleatorio() {
-    const numeroCelulas = tabuleiro.length;
-    const indiceAleatorio = gerarNumeroAleatorio(numeroCelulas);
-
-    tabuleiro[indiceAleatorio].src = 'tiro.png';
-}
-
-tiroAleatorio();
-
-</script>
 <body>
 <table width="400px" border="1" cellpadding="0" cellspacing="0" align="center">
     <script language="JavaScript">
