@@ -1,12 +1,13 @@
 vidas = 5;
 pontos = 0;
-navios = [];
+navios = new Array(5).fill(null).map(() => new Array(8).fill(''));
+
 
 for (g=0; g<5; g++){
     for (h=0; h<8; h++){
         it = Math.floor(Math.random() * 5);
         jt = Math.floor(Math.random() * 8);
-        nv = Math.floor(Math.floor() * 3);
+        nv = Math.floor(Math.random() * 3);
         navios[it][jt] = nv;
     }
 }
@@ -16,27 +17,20 @@ for (ext = 0; ext <5; ext++){
         if (navios[ext][int] !== ''){
             navios[ext][int] = 0
         }
+        console.log(navios[ext][int] + ` posição: ${ext}, ${int}`);
     }
 }
 
 function shipOnClick(i, j) {
-    if (navios[i][j] !== 0 || navios[i][j] !== '') {
-        if (navios[i][j] == 1) {
-            let imgnavio = document.getElementById(`navio${i}, ${j}`);
-            imgnavio.src = "submarino.png";
-            pontos += 1;
-            console.log(pontos);
-        } else if (navios[i][j] == 2) {
-            let imgnavio = document.getElementById(`navio${i}, ${j}`);
-            imgnavio.src = "navio2.png";
-            pontos += 2;
-            console.log(pontos);
-        } else if (navios[i][j] == 3) {
-            let imgnavio = document.getElementById(`navio${i}, ${j}`);
-            imgnavio.src = "navio1.png";
-            pontos += 3;
-            console.log(pontos);
-        }
-
+    if (navios[i][j] == 0) {
+        const type = navios[i][j]
+        ship.src = getImage("./submarino.png")
+        pontos += 1;
+    } else {
+        let imgnavio = document.getElementById(`ship${i}, ${j}`);
+        imgnavio.src = "agua.png";
+        vidas -= 1;
+        console.log(pontos);
+        console.log(vidas);
     }
 }
