@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <head>
     <title>Batalha Naval</title>
+    <link rel="stylesheet" type="text/css" href="batalha-naval.css">
 </head>
-<style>
-
-</style>
 <script>
+    
+const tabuleiro = document.getElementsByClassName('celula');
+
+function gerarNumeroAleatorio(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function tiroAleatorio() {
+    const numeroCelulas = tabuleiro.length;
+    const indiceAleatorio = gerarNumeroAleatorio(numeroCelulas);
+
+    tabuleiro[indiceAleatorio].src = 'tiro.png';
+}
+
+tiroAleatorio();
 
 </script>
 <body>
